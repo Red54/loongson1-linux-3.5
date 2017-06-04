@@ -1379,7 +1379,8 @@ MODULE_LICENSE ("GPL");
 #define        PLATFORM_DRIVER         ehci_mv_driver
 #endif
 
-#ifdef CONFIG_MACH_LOONGSON1
+#if defined(CONFIG_LS1A_MACH) || defined(CONFIG_LS1B_MACH) || \
+    defined(CONFIG_LS1C_MACH)
 #include "ehci-ls1x.c"
 #define PLATFORM_DRIVER		ehci_ls1x_driver
 #endif
